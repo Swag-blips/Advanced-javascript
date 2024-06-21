@@ -35,6 +35,16 @@ class ShyTriangle extends Triangle {
   }
 }
 
+class ColorTriangle extends Triangle {
+  constructor(a, b, color) {
+    super(a, b);
+    this.color = color;
+  }
+}
+
+const color1 = new ColorTriangle(12, 12, "green");
+console.log(color1);
+
 // practice with classe bank account
 
 class BankAccount {
@@ -68,3 +78,41 @@ const a = new BankAccount("123", "james dean");
 console.log(a);
 console.log(a.deposit(200));
 console.log(a.deposit(200));
+
+/* CHALLENGE */
+
+/* Ebook Exercise
+1. Create a class named Book with a constructor that initializes a title, author, and year properties. The title and author should be strings and the year should be a number
+2. Create a subclass named Ebook that extends Book.
+3. The Ebook class should have an additional property fileSize which is a number and a method download() that returns a string with the title of the ebook and its fileSize.
+
+*/
+
+class Book {
+  constructor(title, author, year) {
+    if (typeof title !== "string") throw new Error(`not a string`);
+    if (typeof author !== "string") throw new Error(`not a string`);
+    if (!Number.isFinite(year) || year <= 0) throw new Error(`not a number`);
+
+    this.title = title;
+    this.author = author;
+    this.year = year;
+  }
+}
+
+class Ebook extends Book {
+  constructor(title, author, year, fileSize) {
+    if (!Number.isFinite(fileSize)) throw new Error(`not a number`);
+    super(title, author, year);
+    this.fileSize = fileSize;
+  }
+
+  download() {
+    return `${this.title} has a file size of ${this.fileSize}`;
+  }
+}
+
+const firstBook = new Book("dawn", "wayne", 2003);
+const firstEbook = new Ebook("hello", "damien", 2005, 24);
+
+console.log(firstEbook.download());
