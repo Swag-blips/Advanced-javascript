@@ -116,3 +116,49 @@ const firstBook = new Book("dawn", "wayne", 2003);
 const firstEbook = new Ebook("hello", "damien", 2005, 24);
 
 console.log(firstEbook.download());
+
+/* Challenge */
+
+/*
+ArrayUtils exercise
+Implement a class named ArrayUtils that cannot be instantiated and contains static methods average and max. If the class is instantiated throw an error with the message 'ArrayUtils cannot be instantiated.'
+
+The average method should return the average of an array of numbers. If the array is empty, throw an error with the message 'Array cannot be empty.'
+
+The max method should return the largest number from an array of numbers. You can assume you will always get passed an arrray of numbers*/
+
+class ArrayUtils {
+  constructor() {
+    if (this.constructor == ArrayUtils)
+      throw new Error("ArrayUtils cannot be instantiated.");
+  }
+
+  static average(arr) {
+    if (arr.length === 0) {
+      throw new Error("Array cannot be empty.");
+    } else {
+      let total = 0;
+      let avg;
+      for (let num of arr) {
+        total += num;
+      }
+
+      avg = total / arr.length;
+      return avg;
+    }
+  }
+
+  static max(arr) {
+    let max = arr[0];
+
+    for (let i = 0; i < arr.length; i++) {
+      if (arr[i] > max) {
+        max = arr[i];
+      }
+    }
+
+    return max;
+  }
+}
+
+console.log(ArrayUtils.max([1, 2, 3, 4, 5, 5, 6, 6, 67, 7, 7]));
