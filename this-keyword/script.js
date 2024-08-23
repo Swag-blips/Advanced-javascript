@@ -1,5 +1,3 @@
-"use strict";
-
 class Cat {
   constructor(firstName) {
     this.firstName = firstName;
@@ -15,5 +13,13 @@ const fluffy = new Cat("fluffy");
 // storing this in a variable would result in an error
 console.log(fluffy.dance());
 
+function whatIsThis() {
+  console.log("what is this", this);
+}
+///'
 
-///
+const obj = {
+  whatIsThis: whatIsThis,
+};
+
+whatIsThis();
