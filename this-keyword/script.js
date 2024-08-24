@@ -1,25 +1,33 @@
-class Cat {
-  constructor(firstName) {
-    this.firstName = firstName;
-  }
+// class Cat {
+//   constructor(firstName) {
+//     this.firstName = firstName;
+//   }
 
-  dance(style = "tango") {
-    return `Meow, i am ${this.firstName} and i like to ${style}`;
-  }
-}
+//   static getRandomCat() {
+//     console.log("THIS IS", this);
+//   }
 
-const fluffy = new Cat("fluffy");
+//   dance(style = "tango") {
+//     return `Meow, i am ${this.firstName} and i like to ${style}`;
+//   }
+// }
 
-// storing this in a variable would result in an error
-console.log(fluffy.dance());
+// const fluffy = new Cat("fluffy");
+// const kitty = new Cat("kitty");
 
-function whatIsThis() {
-  console.log("what is this", this);
-}
-///'
+// const fluffyDance = fluffy.dance;
+// console.log(fluffyDance.call(fluffy, "salsa"));
+// // storing this in a variable would result in an error
 
-const obj = {
-  whatIsThis: whatIsThis,
-};
+// function whatIsThis(s) {
+//   console.log("what is this", this);
+// }
+// ///'
 
-whatIsThis();
+// const obj = {
+//   whatIsThis: whatIsThis,
+// };
+
+// whatIsThis();
+
+// // call
