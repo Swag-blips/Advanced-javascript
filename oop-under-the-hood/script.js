@@ -35,4 +35,4 @@ const wyatt = new Dog("wyatt", "aussie");
 //   this.isAdmin = false;
 // }
 
-// const wayne = new User("wayne", "wayne@test.com");
+const wayne = new User("wayne", "wayne@test.com");
