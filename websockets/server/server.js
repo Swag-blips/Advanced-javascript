@@ -12,6 +12,7 @@ app.get("/:roomName", (req, res, next) => {
   return;
 });
 
+
 app.ws("/chat/:roomName", (ws, req, next) => {
   setInterval(() => {
     ws.send(Math.random());
