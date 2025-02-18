@@ -12,16 +12,8 @@ app.get("/:roomName", (req, res, next) => {
   return;
 });
 
-
 app.ws("/chat/:roomName", (ws, req, next) => {
-  setInterval(() => {
-    ws.send(Math.random());
-  }, 500);
-  // try {
-
-  // } catch (error) {
-
-  // }
+ 
 });
 app.listen(3000, () => {
   console.log(`server is running on port 3000`);
